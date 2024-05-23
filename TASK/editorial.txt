@@ -1,0 +1,43 @@
+Step 1:u[][]=[][]={{"one","two","three","four","five","six","seven","eight","nine"},{"ten","twenty","thirty","forty", "fifty","sixty","seventy","eighty","ninety"},{"eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"},{"hundred","thousand","lakh","crore","arab"}}
+Step 2:s=””
+Step 3:function twoDigits(int num)
+Step 4:if(num==0) goto step12 else if(num<10 goto step5 else if(num>10&&num<20) goto step 7 else goto step9
+Step 5:s=s+u[0][num-1]+” “
+Step 6:goto step11
+Step 7:s=s+u[2][num-11]
+Step 8:goto step11
+Step 9:s=s+u[1][num/10-1]+” “
+Step 10:twoDigits(num%10)
+Step 11:endif
+Step 12:endfunction twoDigits(int num)
+Step 13:main function
+Step 14:Input in
+Step 15:num=String.valueOf(in)
+Step 16:if(in==0) goto step 17 else goto step 19
+Step 17:s=”Zero”
+Step 18:goto step 30
+Step 19:partsLength=(num.length()-3)/2+1
+Step 20:if(num.length()%2==0) goto step 21 else goto step 23
+Step 21:partsLength=partsLength+1
+Step 22:endif
+Step 23:create integer array parts of partsLength size
+Step 24:parts[j++]=in%100
+Step 25:in=in/1000
+Step 26:while(in!=0)
+Step 27:parts[j++]=in%100
+Step 28:in=in/100
+Step 29:endwhile
+Step 30:endif
+Step 31:for(i=parts.length-1 to i>=0 decrease i by 1
+Step 32:if(i==0) goto step 33 elseif (parts[i]!=0) goto step 37 else goto step 40
+Step 33:twoDigits(parts[i]/100)
+Step 34:s=s+u[3][i]+” “
+Step 35:twoDigits(parts[i]%100)
+Step 36:goto step 39
+Step 37:twoDigits(parts[i])
+Step 38:s=s+u[3][i]+” “
+Step 39:endif
+Step 40:endfor
+Step 41:Print s
+Step 42:end main
+ 
